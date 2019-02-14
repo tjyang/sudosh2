@@ -13,7 +13,7 @@ Summary: Logged root shell that can be used for auditing
 Group: System/SDL-custom
 License: OSL
 URL: http://sourceforge.net/projects/sudosh2/
-Source: http://sudosh2.sourceforge.net/sudosh2-%{version}.tbz2
+Source: http://sudosh2.sourceforge.net/sudosh2-%{version}.tgz
 
 Packager: John Barton <jbarton@technicalworks.net>
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
@@ -74,6 +74,7 @@ install -m 0744 sudosh.conf.tmp %{buildroot}/etc/sudosh.conf
 %dir %attr(0733 root root) /var/log/sudosh
 
 %changelog
+* Mon Mar 14 2019 - 1.0.6-2 tjyang2001@gmail.com, adding rpm making steps
 * Wed Apr 29 2015 - 1.0.6
 - Version bumped to 1.0.6
 * Fri Jul 09 2010 John Barton <jbarton@technicalworks.net> - 1.0.4-1
