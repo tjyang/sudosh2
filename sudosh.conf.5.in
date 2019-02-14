@@ -72,6 +72,9 @@ syslog.facility         = LOG_LOCAL2
 .RE
 -c arg allow = rsync
 
+# or you can allow all commands to run by wildcard *
+-c arg allow = *
+
 
 # Don't preserve environment variables
 .RE 

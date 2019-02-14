@@ -48,6 +48,13 @@ $ sudo -u oracle sudosh
 
 .RE
 
+Run a command using -c argument.
+
+.RS
+$ sudo sudosh -c "ls -l /etc/host"
+.RE
+
+
 View recorded sessions.  See also
 .BR sudosh-replay (8)
 

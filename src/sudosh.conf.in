@@ -7,5 +7,10 @@ syslog.facility		= LOG_LOCAL2
 clearenvironment	= yes
 
 # Allow Sudosh to execute -c arguments?  If so, what?
+# Ex: sudo sudosh -c "scp /etc/hosts /tmp"
 -c arg allow = scp
 -c arg allow = rsync
+
+# or you can allow all commands to run by wildcard *
+-c arg allow = *
+
