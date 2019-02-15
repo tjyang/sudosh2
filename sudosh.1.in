@@ -67,7 +67,9 @@ sudosh may also be used as a login shell. Make sure to set the proper default sh
 
 
 .SH AUTHOR
+.RE
 Josh Grebe <@PACKAGE_BUGREPORT@>
+.RE
 Douglas Richard Hanks, Jr.
 .SH "SEE ALSO"
 .BR sudosh.conf (5)

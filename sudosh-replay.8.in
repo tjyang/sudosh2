@@ -41,7 +41,9 @@ Playback a sudosh session at twice the speed and only wait a maximum of half a s
 .RS
 # sudosh-replay ID_GOES_HERE 2 .5
 .SH AUTHOR
+.RE
 Josh Grebe <@PACKAGE_BUGREPORT@>
+.RE
 Douglas Richard Hanks, Jr.
 .SH "SEE ALSO"
 .BR sudosh (1),
