@@ -251,6 +251,8 @@ main (int argc, char *argv[], char *environ[])
 		   "Usage: sudosh\n"
 		   "sudo shell that supports input and output logging to syslog\n"
 		   "\n"
+  		   "-c, --command run commands allowed in /etc/sudosh.conf\n"
+     		   "   Ex: sudo sudosh -c \"cp /etc/hosts /tmp\"\n"
 		   "-h, --help	display this help and exit\n"
 		   "-i, --init	initialize logdir (mkdir and chmod) (ignored for compatibility)\n"
 		   "-v, --version	output version information and exit\n"
