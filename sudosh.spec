@@ -3,7 +3,7 @@
 %define origname sudosh2
 %define name sudosh2
 %define version 1.0.6
-%define release 1.el5
+%define release 2.el5
 
 Name: %{name}
 Version: %{version}
@@ -74,7 +74,7 @@ install -m 0744 sudosh.conf.tmp %{buildroot}/etc/sudosh.conf
 %dir %attr(0733 root root) /var/log/sudosh
 
 %changelog
-* Mon Mar 14 2019 - 1.0.6-2 tjyang2001@gmail.com, adding rpm making steps
+* Mon Feb 11 2019 - 1.0.6-2 tjyang2001@gmail.com
 * Wed Apr 29 2015 - 1.0.6
 - Version bumped to 1.0.6
 * Fri Jul 09 2010 John Barton <jbarton@technicalworks.net> - 1.0.4-1
