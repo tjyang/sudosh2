@@ -84,3 +84,116 @@ install -m 0744 sudosh.conf.tmp %{buildroot}/etc/sudosh.conf
 * Fri Jul 09 2010 John Barton <jbarton@technicalworks.net> - 1.0.4-1
 - Update for version 1.0.4
 
+
+
+%pre
+# https://stackoverflow.com/questions/18967389/rpm-post-scriptlet-best-practice
+# https://www.golinuxhub.com/2018/05/how-to-execute-script-at-pre-post-preun-postun-spec-file-rpm.html
+#1.%pre of new package  
+#      (package install)
+#2.%post of new package
+#
+#3.%preun of old package
+#        (removal of old package)
+#4.%postun of old package
+
+if [ $1 == 1 ];then
+    echo "-----------------------"
+    echo "RPM is getting installed"
+    echo "Put your script here"
+    echo "-----------------------"
+elif [ $1 == 2 ];then
+    echo "-----------------------"
+    echo "RPM is getting upgraded"
+    echo "Put your script here"
+    echo "-----------------------"
+fi
+#if [ "$1" = "2" ]; then
+#  #Perform maintenance tasks before server upgrade begins.
+#  #Determine if server is running, stops it.
+#  /etc/init.d/postgres-9.1-openscg status &> /dev/null
+#  if [ "$?" = "0" ];
+#  then
+#   /etc/init.d/postgres-9.1-openscg stop
+#   touch /tmp/pg_9.1.stopped
+#  fi
+#fi
+
+
+%post
+
+if [ $1 == 1 ];then
+    echo "-----------------------"
+    echo "RPM is getting installed"
+    echo "Put your script here"
+    echo "-----------------------"
+elif [ $1 == 2 ];then
+    echo "-----------------------"
+    echo "RPM is getting upgraded"
+    echo "Put your script here"
+    echo "-----------------------"
+fi
+
+#if type "/usr/bin/chcon" &> /dev/null ; then
+#  /usr/bin/chcon -t textrel_shlib_t $RPM_INSTALL_PREFIX/lib/libedit.so &> /dev/null 
+#fi
+#
+##Create a soft link to init script
+#if [ ! -f /etc/init.d/postgres-9.1-openscg ]
+#then
+#  ln -s $RPM_INSTALL_PREFIX/bin/postgres-9.1-openscg /etc/init.d/postgres-9.1-openscg
+#fi
+#
+
+%preun
+
+if [ $1 == 1 ];then
+    echo "-----------------------"
+    echo "RPM is getting upgraded"
+    echo "Put your script here which will be called when this rpm is removed"
+    echo "-----------------------"
+elif [ $1 == 0 ];then
+    echo "--------------------"
+    echo "RPM is getting removed/uninstalled"
+    echo "Put your script here which will be called before uninstallation of this rpm"
+    echo "--------------------"
+fi
+
+
+#if [ "$1" = "0" ]; then
+#  #Action is uninstallation, not called due to upgrade of a new package
+#
+#  #Determine if server is running, stops it.
+#  /etc/init.d/postgres-9.1-openscg status &> /dev/null
+#  if [ "$?" = "0" ];
+#  then
+#   echo "Attempting to stop server..."
+#   /etc/init.d/postgres-9.1-openscg stop
+#  fi
+#
+#  echo "Attempting to update server startup status..." 
+#  if type "/sbin/chkconfig" &> /dev/null ; then
+#   /sbin/chkconfig --del postgres-9.1-openscg 
+#  fi
+#fi
+
+%postun
+if [ $1 == 1 ];then
+    echo "-----------------------"
+    echo "RPM is getting upgraded"
+    echo "Put your script here which will be called when this rpm is removed"
+    echo "-----------------------"
+elif [ $1 == 0 ];then
+    echo "--------------------"
+    echo "RPM is getting removed/uninstalled"
+    echo "Put your script here which will be called after uninstallation of this rpm"
+    echo "--------------------"
+fi
+
+#if [ "$1" = "0" ]; then
+#  #Action is uninstallation, not called due to upgrade of a new package
+#  rm /etc/init.d/postgres-9.1-openscg
+#  echo "Uninstallation complete."
+#fi
+
+
