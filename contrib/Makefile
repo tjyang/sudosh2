@@ -17,7 +17,8 @@ MWD=/tmp
 
 clean:
 	@(sudo rm -f ../sudosh2-1.0.6.tgz *.rpm *~ ../*~)
-
+	@(sudo rm -f ../sudosh.1 ../sudosh-replay.8 ../sudosh.conf.5 ../config.h ../stamp-h1 ../config.log) 
+	@(sudo rm -rf ../autom4te.cache ../config.guess ../config.sub ../config.status ../Makefile)
 rpm:
 	# create sudosh2 tar ball.
 	@(cd ..;rm -f sudosh2-1.0.6)
