@@ -12,7 +12,7 @@ Summary: Logged root shell that can be used for auditing
 
 Group: System/SDL-custom
 License: OSL
-URL: http://sourceforge.net/projects/sudosh2/
+URL: https://github.com/tjyang/sudosh2
 Source: http://sudosh2.sourceforge.net/sudosh2-%{version}.tgz
 
 Packager: John Barton <jbarton@technicalworks.net>
@@ -33,18 +33,22 @@ actual session output.
 %setup -q -n %{origname}-%{version}
 
 %{__cat} <<EOF >sudosh.conf.tmp
-# Sudosh Configuration File
+# sudosh Configuration File
 logdir                  = /var/log/sudosh
 default shell           = /bin/bash
 delimiter               = -
 syslog.priority         = LOG_NOTICE
 syslog.facility         = LOG_DAEMON
 
-# Allow Sudosh to execute -c arguements?  If so, what?
+# Allow sudosh to execute -c arguements?  If so, what?
 -c arg allow = scp
 -c arg allow = sftp
 -c arg allow = /usr/libexec/openssh/sftp-server
-# -c arg allow = rsync
+-c arg allow = rsync
+
+# or comment out above -c lines
+# use following setting to allow all commands.
+-c arg allow = *
 EOF
 
 %build
