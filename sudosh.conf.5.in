@@ -50,8 +50,8 @@ This option can be used multiple times.  If you wish to use sudosh as a default 
 clearenvironment = false
 Set this option to true to clear shell environment variables for incoming sessions. Set to false for things like ssh agent forwarding.
 
-.SH EXAMPLES
-# Sudosh Configuration File
+.SH EXAMPLES: /etc/sudosh.conf
+# sudosh Configuration File
 .RE
 logdir                  = /var/log/sudosh
 .RE
@@ -66,13 +66,14 @@ syslog.priority         = LOG_INFO
 syslog.facility         = LOG_LOCAL2
 .RE
 
-# Allow Sudosh to execute -c arguements?  If so, what?
+# Allow sudosh to execute -c arguements?  If so, what?
 .RE
 -c arg allow = scp
 .RE
 -c arg allow = rsync
 
 # or you can allow all commands to run by wildcard *
+.RE
 -c arg allow = *
 
 
@@ -81,7 +82,9 @@ syslog.facility         = LOG_LOCAL2
 clearenvironment = yes
 
 .SH AUTHOR
+.RE 
 Josh Grebe <josh@shortcutsolutions.net>
+.RE 
 Douglas Richard Hanks, Jr. <dhanks@gmail.com>
 .SH "SEE ALSO"
 .BR sudosh-replay (8),
